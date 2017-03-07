@@ -1,0 +1,435 @@
+@font-face {
+    font-family: 'Gotham Book'; /*a name to be used later*/
+    src: url('../fonts/Gotham-Light.ttf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Gotham Medium'; /*a name to be used later*/
+    src: url('../fonts/Gotham-Medium.ttf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Didot'; /*a name to be used later*/
+    src: url('../fonts/Didot.ttc'); /*URL to font*/
+}
+
+html, body {
+    height:100%;
+}
+
+body {
+  font-family: 'Gotham Book';
+}
+
+.page-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 767px) {
+  .page-container {
+    padding: 0 30px;
+  }
+}
+
+.main-banner-bg {
+  background: url(../images/main.jpeg) top center no-repeat scroll;
+
+}
+
+.hero-banner {
+  background-size: cover;
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding: 120px 60px;
+}
+
+.hero-banner > .text {
+  font-family: 'Didot';
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 3px #333333 .5;
+}
+
+.hero-banner h1.hero {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 60px;
+  margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 767px) {
+  .hero-banner {
+    padding: 30px 20px;
+  }
+
+  .hero-banner h1 {
+    font-size: 20px;
+  }
+
+  .hero-banner h1.hero {
+    font-size: 30px;
+  }
+}
+
+.main-search-bar {
+  height: 70px;
+  margin: 0 auto 50px auto;
+}
+
+.main-search-bar form {
+  position: relative;
+}
+
+.main-search-bar input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  font-size: 24px;
+  background: url(../images/icon-search.svg) no-repeat 20px center;
+  background-position: right;
+  background-size: 30px;
+  padding: 20px 0;
+  font-family: "Gotham Book";
+}
+
+.main-search-bar.light input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  font-size: 36px;
+  background: url(../images/icon-search-dark.svg) no-repeat 20px center;
+  background-position: right;
+  background-size: 30px;
+  padding-top: 20px;
+  font-family: "Gotham Book";
+}
+
+.main-search-bar .hidden-submit {
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  top: 10px;
+  right: 0;
+  opacity: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .main-search-bar {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .main-search-bar input {
+    font-size: 14px;
+    background: url(../images/icon-search.svg) no-repeat 15px center;
+    background-position: right;
+    background-size: 20px;
+    padding: 20px 0;
+  }
+
+  .main-search-bar.light input {
+    font-size: 20px;
+    background-position: right;
+    background-size: 20px;
+    padding: 20px 0;
+  }
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
+  opacity: 0.5;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: white;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: white;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: white;
+}
+
+input {
+  outline: none;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.category {
+  display: block;
+  transition: all 0.3s ease 0s;
+}
+
+.category h4 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #999;
+}
+
+.category h4::after {
+  display: block;
+  content: '';
+  border-bottom: 3px solid #ddd;
+  margin: 20px 0;
+  width: 20px;
+}
+
+a.category-card {
+  border: 1px solid #eee;
+  padding: 10px;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+a.category-card p {
+  color: #222;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+a.category-card:hover {
+  text-decoration: none;
+  border: 1px solid #ccc;
+}
+
+a.category-card.active {
+  text-decoration: none;
+  border: 1px solid #ff5a5f;
+}
+
+.category-card img {
+  width: 50px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border: 2px solid white;
+}
+
+
+
+a.category-card:hover > img {
+  border-color: #ccc;
+}
+
+.search-results h1 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #999;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.search-results.listing > div {
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  border: 1px solid #eee;
+  border-radius: 3px;
+  padding: 20px;
+  float: left;
+  display: block;
+  width: 100%;
+  position: relative;
+  color: inherit;
+}
+
+.card > * {
+  margin-bottom: 10px;
+}
+
+.card > *:last-child {
+  margin-bottom: 0;
+}
+
+.card > .header {
+  width: 100%;
+  position: relative;
+}
+
+.card > .header > * {
+  display: table-cell;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+
+.card > .header > .image > img {
+  border-radius: 50%;
+  width: 50px;
+}
+
+.card > .header > .desc > .name {
+  font-weight: bold;
+}
+
+.card > .header > .desc > .type {
+  color: #ff5a5f;
+  font-family: "Gotham Medium", Arial, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.card > .body > * {
+  margin-bottom: 5px;
+}
+
+.card > .body > .date {
+  color: #aaa;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.card > .body > .title {
+  font-size:  18px;
+  font-family: "Gotham Medium", Arial, sans-serif;
+}
+
+.card > .body > .desc {
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.card > .body > .read-more {
+  margin-top: 10px;
+  font-size: 14px;
+  display: block;
+  color: #ff5a5f;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+.card-social > .body > .image img {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 767px) {
+  .card-social > .body > .image img {
+    width: 100%;
+  }
+}
+
+.card-social > .body > .desc, .card-social > .body > a > .desc {
+  font-style: italic;
+  font-size: 16px;
+  border-left: 10px solid #ddd;
+  background-color: #eee;
+  padding: 10px;
+}
+
+.card-social .details > * {
+  display: inline-block;
+}
+
+.card-social .details > *:first-child::after {
+  content: '\00B7';
+  margin-left: 5px;
+}
+
+@media only screen and (max-width: 767px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+.card-social .source-icon, .card .source-icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.card.cnn .source-icon {
+  background: url(../images/cnn.svg) top center no-repeat scroll;
+}
+
+.card-social.twitter .source-icon {
+  background: url(../images/twitter.svg) top center no-repeat scroll;
+}
+
+.card-social.instagram .source-icon {
+  background: url(../images/instagram.svg) top center no-repeat scroll;
+}
+
+.navbar-default {
+  border-radius: 0;
+  background-color: white;
+  border-top: 3px solid white;
+}
+
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.pace-inactive {
+  display: none;
+}
+
+.pace .pace-progress {
+  background: #ccc;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 3px;
+}
+
+nav {
+  display: block;
+  border-bottom: 1px solid #eee;
+  border-top: 3px solid white;
+  padding: 15px 0;
+  margin-bottom: 30px;
+}
+
+nav > div {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+nav > div > a > img {
+  margin: 0 auto;
+  display: block;
+  width: 250px;
+}
