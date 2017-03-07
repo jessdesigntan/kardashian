@@ -12,8 +12,8 @@
     <?php navbar(); ?>
     <div class="page-container">
       <div class="main-search-bar light">
-        <form action="listing.php">
-          <input type="text" placeholder="Search anything ..." value="<?=$key;?>" id="searchBar" role="search" onfocus="this.value = this.value;">
+        <form action="listing.php" method="post">
+          <input name="q" type="text" placeholder="Search anything ..." value="<?=$key;?>" id="searchBar" role="search" onfocus="this.value = this.value;">
           <button type="submit" class="hidden-submit"></button>
         </form>
       </div>
