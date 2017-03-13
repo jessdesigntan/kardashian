@@ -312,6 +312,18 @@ a.category-card:hover > img {
   -webkit-box-orient: vertical;
 }
 
+.card > .body > .desc a {
+  color: #ff5a5f;
+}
+
+.card > .body > .desc a.blue-color {
+  color: #2CADE5;
+}
+
+.card > .body > .desc a:hover {
+  text-decoration: underline !important;
+}
+
 .card > .body > .read-more {
   margin-top: 10px;
   font-size: 14px;
@@ -343,11 +355,11 @@ a:hover {
 }
 
 .card-social > .body > .desc, .card-social > .body > a > .desc {
-  font-style: italic;
-  font-size: 16px;
+  font-size: 20px;
   border-left: 10px solid #ddd;
   background-color: #eee;
   padding: 10px;
+  font-weight: bold;
 }
 
 .card-social .details > * {
@@ -374,8 +386,8 @@ a:hover {
   height: 20px;
 }
 
-.card.cnn .source-icon {
-  background: url(../images/cnn.svg) top center no-repeat scroll;
+.card.cnet .source-icon {
+  background: url(../images/cnet.png) top center no-repeat scroll;
 }
 
 .card-social.twitter .source-icon {
@@ -432,4 +444,21 @@ nav > div > a > img {
   margin: 0 auto;
   display: block;
   width: 250px;
+}
+
+img.emoji {
+  width: 20px;
+  margin: -5px 5px 0 5px;
+}
+
+.post-empty-state {
+  width: 100%;
+  display: table;
+  padding: 50px;
+  background-color: #f7f7f7;
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #aaa;
 }

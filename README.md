@@ -48,4 +48,4 @@ Repeat this for title, content, date and url
 
 ## To delete all documents (data)
 Run this in the browser  
-http://localhost:8983/solr/data/update?stream.body=<delete><query>*:*</query></delete>&commit=true
+http://localhost:8983/solr/data/update?stream.body=<delete><query>*news*</query></delete>&commit=true
