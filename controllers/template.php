@@ -1,5 +1,5 @@
 <?php
-  $url = "http://localhost:8983/solr/data/select?indent=on&rows=20000&start=0&wt=json&omitHeader=true&";
+  $url = "http://localhost:8983/solr/database/select?indent=on&rows=20000&start=0&wt=json&omitHeader=true&";
   function search($key) {
     //split query into one word
     // if ($key == "kim kardashian") {
@@ -23,11 +23,12 @@
 
     $keys = explode(" ", $key);
     foreach ($keys as $k) {
-      $url = "http://localhost:8983/solr/data/select?indent=on&q=*$k*&rows=20000&start=0&wt=json&omitHeader=true";
+      $url = "http://localhost:8983/solr/database/select?indent=on&q=$k&rows=20000&start=0&wt=json&omitHeader=true";
       $json = file_get_contents($url);
       $arr = json_decode($json, true);
       return $arr;
     }
+
 
     $json = file_get_contents($url);
     $arr = json_decode($json, true);
@@ -237,6 +238,12 @@ function newsImage($source) {
   }
   if (strtolower($source) == "dailymail<br><br/>") {
     return "images/daily.jpg";
+  }
+  if (strtolower($source) == "just jared<br/>") {
+    return "images/justjared.jpg";
+  }
+  if (strtolower($source) == "gossip center<br/>") {
+    return "images/gossipcenter.jpg";
   }
 }
 

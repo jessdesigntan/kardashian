@@ -26,10 +26,22 @@
             <h1>Filters</h1>
             <form method="get" action="listing.php">
                 <div class="checkbox">
-                  <label><input type="checkbox" value="twitter" name="q">Twitter</label>
+                  <label><input type="checkbox" value="type:twitter" name="q">Twitter</label>
                 </div>
                 <div class="checkbox">
-                  <label><input type="checkbox" value="news" name="q">News</label>
+                  <label><input type="checkbox" value="type:news" name="q">News</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="fashion" name="q">Fashion</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="fitness" name="q">Fitness</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="baby" name="q">Baby</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="health" name="q">Health</label>
                 </div>
                 <button type="submit" class="btn-primary btn">Filter</button>
               </form>
