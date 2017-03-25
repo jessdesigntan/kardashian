@@ -115,6 +115,7 @@ function cardNews($source, $title, $content, $date, $url) {
       </a>
     </div>
     <div class="desc">
+      <?php $url = removeBRURL($url); ?>
       <a href="<?=$url;?>">
         <?=$content;?>
       </a>
@@ -123,6 +124,10 @@ function cardNews($source, $title, $content, $date, $url) {
   </div><!-- end of body -->
 </div><!-- end of card -->
 <?php
+}
+
+function removeBRURL($url) {
+  return str_replace('<br/>', '', $url);
 }
 
 function cardInstagram() {
@@ -155,8 +160,6 @@ function cardInstagram() {
 
 function cardTwitter($user, $tweet, $date) {
   $image = twitterImage($user);
-  //$tweet = stripslashes($tweet);
-  //$tweet = replaceEmoji($tweet);
   $tweet = replaceBreakline($tweet);
   $tweet = makeClickableLinks($tweet);
   $tweet = highlightMention($tweet);
@@ -175,10 +178,6 @@ function cardTwitter($user, $tweet, $date) {
     <div class="desc">
       <?=$tweet;?>
     </div>
-    <!--<div class="details">
-      <div class="likes">5000 likes</div>
-      <div>123 retweets</div>
-    </div>-->
   </div><!-- end of body -->
 </div><!-- end of card -->
 <?php

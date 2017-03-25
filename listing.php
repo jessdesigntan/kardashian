@@ -43,6 +43,15 @@
                 <div class="checkbox">
                   <label><input type="checkbox" value="health" name="q">Health</label>
                 </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="source:cnet" name="q">Cnet</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="source:Just%20Jared" name="q">Just Jared</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="source:Gossip%20Center" name="q">Gossip Center</label>
+                </div>
                 <button type="submit" class="btn-primary btn">Filter</button>
               </form>
           </div>
