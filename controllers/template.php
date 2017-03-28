@@ -1,5 +1,5 @@
 <?php
-  $url = "http://localhost:8983/solr/database/select?indent=on&rows=20000&start=0&wt=json&omitHeader=true&";
+  $url = "http://localhost:8983/solr/database/select?indent=on&q=*:*&rows=20000&start=0&wt=json&omitHeader=true";
   function search($key) {
     //split query into one word
     // if ($key == "kim kardashian") {
@@ -110,7 +110,7 @@ function cardNews($source, $title, $content, $date, $url) {
       <?=$date;?>
     </div>
     <div class="title">
-      <a href="<?=$url;?>">
+      <a href="<?=removeBRURL($url);?>">
         <?=$title;?>
       </a>
     </div>

@@ -1,5 +1,6 @@
 <?php
   include("controllers/template.php");
+
   $key = $_GET['q'];
   $result = search($key);
 ?>
@@ -87,7 +88,11 @@
               ?>
               <div class="post-empty-state">
                 <div>
-                  <h4>Nothing found</h4>
+                  <?php if ($q == "") { ?>
+                    <h4>Search anything!</h4>
+                  <?php } else { ?>
+                    <h4>Nothing found</h4>
+                  <?php } ?>
                 </div>
               </div>
               <?php
