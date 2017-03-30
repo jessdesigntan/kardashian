@@ -78,7 +78,7 @@ body {
 
 .main-search-bar {
   height: 70px;
-  margin: 0 auto 50px auto;
+  margin: 0 auto 80px auto;
 }
 
 .main-search-bar form {
@@ -461,4 +461,25 @@ img.emoji {
   text-transform: uppercase;
   font-weight: bold;
   color: #aaa;
+}
+
+.spellcheck {
+  margin: 10px 0;
+  display: block;
+}
+
+.spellcheck p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.spellcheck .label {
+  font-size: 18px;
+  background: #ff5a5f;
+  color: white;
+  cursor: pointer;
+}
+
+.spellcheck .label:hover {
+  opacity: 0.8;
 }

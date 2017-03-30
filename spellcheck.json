@@ -1,0 +1,92 @@
+{
+  "response": {
+    "numFound": 0,
+    "start": 0,
+    "docs": []
+  },
+  "spellcheck": {
+    "suggestions": [
+      "kuliey",
+      {
+        "numFound": 6,
+        "startOffset": 0,
+        "endOffset": 6,
+        "origFreq": 0,
+        "suggestion": [
+          {
+            "word": "kylies",
+            "freq": 19
+          },
+          {
+            "word": "kelsey",
+            "freq": 7
+          },
+          {
+            "word": "kelley",
+            "freq": 2
+          },
+          {
+            "word": "kyliej",
+            "freq": 1
+          },
+          {
+            "word": "kylie",
+            "freq": 2549
+          },
+          {
+            "word": "kaley",
+            "freq": 36
+          }
+        ]
+      }
+    ],
+    "correctlySpelled": false,
+    "collations": [
+      "collation",
+      {
+        "collationQuery": "kylies",
+        "hits": 19,
+        "misspellingsAndCorrections": [
+          "kuliey",
+          "kylies"
+        ]
+      },
+      "collation",
+      {
+        "collationQuery": "kelsey",
+        "hits": 7,
+        "misspellingsAndCorrections": [
+          "kuliey",
+          "kelsey"
+        ]
+      },
+      "collation",
+      {
+        "collationQuery": "kelley",
+        "hits": 2,
+        "misspellingsAndCorrections": [
+          "kuliey",
+          "kelley"
+        ]
+      },
+      "collation",
+      {
+        "collationQuery": "kyliej",
+        "hits": 1,
+        "misspellingsAndCorrections": [
+          "kuliey",
+          "kyliej"
+        ]
+      },
+      "collation",
+      {
+        "collationQuery": "kylie",
+        "hits": 2549,
+        "misspellingsAndCorrections": [
+          "kuliey",
+          "kylie"
+        ]
+      }
+    ]
+  }
+}

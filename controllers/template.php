@@ -1,25 +1,6 @@
 <?php
   $url = "http://localhost:8983/solr/database/select?indent=on&q=*:*&rows=20000&start=0&wt=json&omitHeader=true";
   function search($key) {
-    //split query into one word
-    // if ($key == "kim kardashian") {
-    //   $url .= "q=user=kimkardashian";
-    // }
-    // if ($key == "kourtney kardashian") {
-    //   $url .= "q=user=kourtneykardash";
-    // }
-    // if ($key == "khloe kardashian") {
-    //   $url .= "q=user=khloekardashian";
-    // }
-    // if ($key == "kendall jenner") {
-    //   $url .= "q=user=kendalljenner";
-    // }
-    // if ($key == "kylie jenner") {
-    //   $url .= "q=user=kyliejenner";
-    // }
-    // if ($key == "robert kardashian") {
-    //   $url .= "q=user=robkardashian";
-    // }
 
     $keys = explode(" ", $key);
     foreach ($keys as $k) {
@@ -29,9 +10,9 @@
       return $arr;
     }
 
-
     $json = file_get_contents($url);
     $arr = json_decode($json, true);
+
     return $arr;
 
   }
@@ -93,6 +74,22 @@ function navbar() {
 <?php
 }
 
+function spellcheck($key) {
+  $url = "http://localhost:8983/solr/database/spell?spellcheck.q=$key&spellcheck=true&wt=json&omitHeader=true&onlyMorePopular=true&rows=1";
+  $json = file_get_contents($url);
+  $jsonDecoded = json_decode($json, true);
+
+  $suggestion = array();
+  foreach($jsonDecoded["spellcheck"]["suggestions"] as $k=>$v){
+      foreach($v["suggestion"] as $k2 => $v2) {
+          if(count($v2)>0) $suggestion[] = $v2;
+      }
+  }
+
+  return $suggestion[0]["word"];
+
+}
+
 function cardNews($source, $title, $content, $date, $url) {
   $img = newsImage($source);
 ?>
@@ -100,7 +97,7 @@ function cardNews($source, $title, $content, $date, $url) {
   <div class="header">
     <div class="image"><img src="<?=$img;?>" alt="<?=$source;?>"></div>
     <div class="desc">
-      <div class="name"><?=$source;?></div>
+      <div class="name"><?=removeBR($source);?></div>
       <div class="type">News</div>
       <div class="source-icon"></div>
     </div>
@@ -128,6 +125,10 @@ function cardNews($source, $title, $content, $date, $url) {
 
 function removeBRURL($url) {
   return str_replace('<br/>', '', $url);
+}
+
+function removeBR($name) {
+  return str_replace('<br>', '', $name);
 }
 
 function cardInstagram() {
@@ -191,31 +192,31 @@ function category() {
       <h4>Keep up with</h4>
     </div>
     <div class="col-sm-2 col-xs-4">
-      <a class="category-card" onclick="card('kim')" id="kim" href="listing.php?q=kim">
+      <a class="category-card" onclick="card('kim')" id="kim" href="index.php?q=kim">
         <img src="images/kim.jpg" alt="kim kardashian" class="img-responsive">
         <p>Kim</p>
       </a>
     </div>
     <div class="col-sm-2 col-xs-4">
-      <a class="category-card" onclick="card('khloe')" id="khloe" href="listing.php?q=khloe">
+      <a class="category-card" onclick="card('khloe')" id="khloe" href="index.php?q=khloe">
         <img src="images/khloe.jpg" alt="khloe kardashian" class="img-responsive">
         <p>Khloe</p>
       </a>
     </div>
     <div class="col-sm-2 col-xs-4">
-      <a class="category-card" onclick="card('kourtney')" id="kourtney" href="listing.php?q=kourtney">
+      <a class="category-card" onclick="card('kourtney')" id="kourtney" href="index.php?q=kourtney">
         <img src="images/kourtney.jpg" alt="kourtney kardashian" class="img-responsive">
         <p>Kourtney</p>
       </a>
     </div>
     <div class="col-sm-2 col-xs-4">
-      <a class="category-card" onclick="card('kendall')" id="kendall" href="listing.php?q=kendall">
+      <a class="category-card" onclick="card('kendall')" id="kendall" href="index.php?q=kendall">
         <img src="images/kendall.jpg" alt="kendall jenner" class="img-responsive">
         <p>Kendall</p>
       </a>
     </div>
     <div class="col-sm-2 col-xs-4">
-      <a class="category-card" onclick="card('kylie')" id="kylie" href="listing.php?q=kylie">
+      <a class="category-card" onclick="card('kylie')" id="kylie" href="index.php?q=kylie">
         <img src="images/kylie.jpg" alt="kylie jenner" class="img-responsive">
         <p>Kylie</p>
       </a>
