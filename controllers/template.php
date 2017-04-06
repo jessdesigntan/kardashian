@@ -222,7 +222,7 @@ function category() {
       </a>
     </div>
     <div class="col-sm-2 col-xs-4">
-      <a class="category-card" onclick="card('robert')" id="robert" href="listing.php?q=rob">
+      <a class="category-card" onclick="card('robert')" id="robert" href="index.php?q=rob">
         <img src="images/robert.jpg" alt="robert kardashian" class="img-responsive">
         <p>Robert</p>
       </a>

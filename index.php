@@ -21,11 +21,17 @@
           <?php
             if(count($result['response']['docs']) == 0 && $key != "") {
               $suggestion = spellcheck($key);
+              if(count($suggestion) == 0) {
+              ?>
+              <p>Sorry! No results found :(</p>
+              <?php
+            } else {
           ?>
             <p>Did you mean
               <a class="label" href="index.php?q=<?=$suggestion;?>"><?php echo $suggestion; ?></a>
             ?</p>
-          <?php } ?>
+          <?php } } ?>
+
         </div>
       </div>
 
